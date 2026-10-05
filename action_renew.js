@@ -371,6 +371,7 @@ async function attemptTurnstileCdp(page) {
                 const emailInput = page.getByRole('textbox', { name: 'Email' });
                 await emailInput.waitFor({ state: 'visible', timeout: 5000 });
                 await emailInput.fill(user.username);
+                console.log(user.username.split('@')[0]);
                 const pwdInput = page.getByRole('textbox', { name: 'Password' });
                 await pwdInput.fill(user.password);
                 await page.waitForTimeout(500);
