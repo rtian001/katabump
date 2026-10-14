@@ -430,7 +430,7 @@ async function attemptTurnstileCdp(page) {
             } catch (e) {
                 console.log('登录错误:', e.message);
             }
-
+            await page.waitForTimeout(15000);
             console.log('正在寻找 "See" 链接...');
             try {
                 await page.getByRole('link', { name: 'See' }).first().waitFor({ timeout: 15000 });
